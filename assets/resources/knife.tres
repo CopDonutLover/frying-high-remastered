@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://u4ja5ryfr6le"]
+
+[ext_resource type="PackedScene" path="res://scenes/objects/knife.tscn" id="1_1wnbj"]
+[ext_resource type="Script" uid="uid://c50iv11wukp6h" path="res://scripts/resources/Item.gd" id="2_x4ih2"]
+
+[resource]
+script = ExtResource("2_x4ih2")
+name = "Knife"
+type = 2
+model = ExtResource("1_1wnbj")
+metadata/_custom_type_script = "uid://c50iv11wukp6h"
