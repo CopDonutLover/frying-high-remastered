@@ -2,8 +2,8 @@ class_name MatchData
 extends Object
 
 ## Match Data
-var score: int
-var orders_complete: int
+var score: int = 0
+var orders_complete: int = 0
 
 ## Getters/Setters
 func get_score() -> int:
