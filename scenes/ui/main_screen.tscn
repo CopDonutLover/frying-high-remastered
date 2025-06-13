@@ -1,0 +1,187 @@
+[gd_scene load_steps=4 format=3 uid="uid://d25j4a53mdivk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6jb6"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pc1m0"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ws2m"]
+draw_center = false
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+expand_margin_bottom = 10.0
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelSelect" type="Node" parent="."]
+
+[node name="LevelsLabelOutline" type="Panel" parent="LevelSelect"]
+anchors_preset = -1
+anchor_left = 0.0520833
+anchor_top = 0.0462963
+anchor_right = 0.364583
+anchor_bottom = 0.138889
+theme_override_styles/panel = SubResource("StyleBoxFlat_t6jb6")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelsContainerOutline" type="Panel" parent="LevelSelect"]
+anchors_preset = -1
+anchor_left = 0.0520833
+anchor_top = 0.185185
+anchor_right = 0.364583
+anchor_bottom = 0.925926
+theme_override_styles/panel = SubResource("StyleBoxFlat_pc1m0")
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionOutline" type="Panel" parent="LevelSelect"]
+anchors_preset = -1
+anchor_left = 0.369792
+anchor_top = 0.277778
+anchor_right = 0.578125
+anchor_bottom = 0.925926
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ws2m")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelsContainer" type="VBoxContainer" parent="LevelSelect"]
+anchors_preset = -1
+anchor_left = 0.0520833
+anchor_top = 0.185185
+anchor_right = 0.364583
+anchor_bottom = 0.925926
+metadata/_edit_use_anchors_ = true
+
+[node name="CookBurgersLevelButton" type="Button" parent="LevelSelect/LevelsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Cook Burgers"
+
+[node name="LevelsLabel" type="Label" parent="LevelSelect"]
+anchors_preset = -1
+anchor_left = 0.0520833
+anchor_top = 0.0462963
+anchor_right = 0.364583
+anchor_bottom = 0.138889
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 50
+text = "Levels"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="LevelSelect"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.369792
+anchor_top = 0.175926
+anchor_right = 0.578125
+anchor_bottom = 0.277778
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionLabel" type="Label" parent="LevelSelect"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.372396
+anchor_top = 0.277778
+anchor_right = 0.578125
+anchor_bottom = 0.925926
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StatsPanel" type="Node" parent="."]
+
+[node name="StatsLabelOutline" type="Panel" parent="StatsPanel"]
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.0472222
+anchor_right = 0.9375
+anchor_bottom = 0.139815
+theme_override_styles/panel = SubResource("StyleBoxFlat_t6jb6")
+metadata/_edit_use_anchors_ = true
+
+[node name="StatsContainerOutline" type="Panel" parent="StatsPanel"]
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.185185
+anchor_right = 0.9375
+anchor_bottom = 0.925926
+theme_override_styles/panel = SubResource("StyleBoxFlat_pc1m0")
+metadata/_edit_use_anchors_ = true
+
+[node name="StatsContainer" type="VBoxContainer" parent="StatsPanel"]
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.185185
+anchor_right = 0.9375
+anchor_bottom = 0.925926
+metadata/_edit_use_anchors_ = true
+
+[node name="TotalScoreLabel" type="Label" parent="StatsPanel/StatsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Total Score:"
+vertical_alignment = 1
+
+[node name="TotalOrdersCompleteLabel" type="Label" parent="StatsPanel/StatsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Total Orders Complete:"
+vertical_alignment = 1
+
+[node name="TotalTimePlayedLabel" type="Label" parent="StatsPanel/StatsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Total Time Played:"
+vertical_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="StatsPanel"]
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.0462963
+anchor_right = 0.9375
+anchor_bottom = 0.138889
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 50
+text = "Statistics"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
