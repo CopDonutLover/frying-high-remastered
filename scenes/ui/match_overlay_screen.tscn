@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bayyhgwux50fb"]
+
+[node name="MatchOverlayScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimerLabelBackground" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.729167
+anchor_top = 0.0462963
+anchor_right = 0.9375
+anchor_bottom = 0.138889
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabelBackground" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.729167
+anchor_top = 0.833333
+anchor_right = 0.9375
+anchor_bottom = 0.925926
+metadata/_edit_use_anchors_ = true
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.729167
+anchor_top = 0.0462963
+anchor_right = 0.9375
+anchor_bottom = 0.138889
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "0:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.729167
+anchor_top = 0.833333
+anchor_right = 0.9375
+anchor_bottom = 0.925926
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
