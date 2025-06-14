@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://csc8e5dd1k00x"]
+
+[ext_resource type="Script" uid="uid://cgec4uaoc6fr6" path="res://scripts/ui/EndGameScreen.gd" id="1_yjd4n"]
+
+[node name="EndGameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjd4n")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.291667
+anchor_top = 0.185185
+anchor_right = 0.708333
+anchor_bottom = 0.324074
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Score:"
+metadata/_edit_use_anchors_ = true
+
+[node name="OrdersCompleteLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.291667
+anchor_top = 0.371296
+anchor_right = 0.708333
+anchor_bottom = 0.510185
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Orders Complete:"
+metadata/_edit_use_anchors_ = true
+
+[node name="LobbyButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34375
+anchor_top = 0.555556
+anchor_right = 0.65625
+anchor_bottom = 0.694444
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "LOBBY"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayAgainButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34375
+anchor_top = 0.740741
+anchor_right = 0.65625
+anchor_bottom = 0.87963
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "PLAY AGAIN"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="LobbyButton" to="." method="_on_lobby_button_pressed"]
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
