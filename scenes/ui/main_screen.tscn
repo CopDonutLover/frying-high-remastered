@@ -1,4 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d25j4a53mdivk"]
+[gd_scene load_steps=10 format=3 uid="uid://d25j4a53mdivk"]
+
+[ext_resource type="Script" uid="uid://bfeltly3oxlfi" path="res://scripts/ui/MainScreen.gd" id="1_pc1m0"]
+[ext_resource type="PackedScene" uid="uid://cbohr7s16m8tp" path="res://scenes/gameplay/levels/cook_burgers.tscn" id="2_lgxmk"]
+[ext_resource type="Script" uid="uid://cnfngb4son85x" path="res://scripts/resources/Level.gd" id="3_25c13"]
+[ext_resource type="PackedScene" uid="uid://codbhd0mu11d0" path="res://test/test_level.tscn" id="4_odiyu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6jb6"]
 draw_center = false
@@ -29,6 +34,18 @@ border_width_right = 5
 border_width_bottom = 5
 expand_margin_bottom = 10.0
 
+[sub_resource type="Resource" id="Resource_lgxmk"]
+script = ExtResource("3_25c13")
+level = ExtResource("2_lgxmk")
+description = "Cook burgers and chips in this face-paced level!"
+metadata/_custom_type_script = "uid://cnfngb4son85x"
+
+[sub_resource type="Resource" id="Resource_25c13"]
+script = ExtResource("3_25c13")
+level = ExtResource("4_odiyu")
+description = "This is the test level for system/level"
+metadata/_custom_type_script = "uid://cnfngb4son85x"
+
 [node name="MainScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -36,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pc1m0")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -76,6 +94,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1ws2m")
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelsContainer" type="VBoxContainer" parent="LevelSelect"]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.0520833
 anchor_top = 0.185185
@@ -84,10 +103,17 @@ anchor_bottom = 0.925926
 metadata/_edit_use_anchors_ = true
 
 [node name="CookBurgersLevelButton" type="Button" parent="LevelSelect/LevelsContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Cook Burgers"
+metadata/Level = SubResource("Resource_lgxmk")
+
+[node name="TestLevel" type="Button" parent="LevelSelect/LevelsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Test Level
+"
+metadata/Level = SubResource("Resource_25c13")
 
 [node name="LevelsLabel" type="Label" parent="LevelSelect"]
 anchors_preset = -1
@@ -102,17 +128,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayButton" type="Button" parent="LevelSelect"]
-unique_name_in_owner = true
-anchors_preset = -1
-anchor_left = 0.369792
-anchor_top = 0.175926
-anchor_right = 0.578125
-anchor_bottom = 0.277778
-theme_override_font_sizes/font_size = 50
-text = "PLAY"
-metadata/_edit_use_anchors_ = true
-
 [node name="DescriptionLabel" type="Label" parent="LevelSelect"]
 unique_name_in_owner = true
 anchors_preset = -1
@@ -122,6 +137,16 @@ anchor_right = 0.578125
 anchor_bottom = 0.925926
 theme_override_font_sizes/font_size = 30
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="LevelSelect"]
+anchors_preset = -1
+anchor_left = 0.369792
+anchor_top = 0.175926
+anchor_right = 0.578125
+anchor_bottom = 0.277778
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
 metadata/_edit_use_anchors_ = true
 
 [node name="StatsPanel" type="Node" parent="."]
@@ -185,3 +210,5 @@ text = "Statistics"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="LevelSelect/PlayButton" to="." method="_on_play_button_pressed"]

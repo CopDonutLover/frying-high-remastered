@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfcora3bjh73l"]
+
+[ext_resource type="PackedScene" uid="uid://cyutoijs6phjp" path="res://scenes/gameplay/player.tscn" id="1_6tf54"]
+[ext_resource type="PackedScene" uid="uid://cy5d1ferk61n" path="res://scenes/ui/pause_screen.tscn" id="2_gfmx6"]
+
+[node name="PlayerMovement" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(4, 1, 4)
+
+[node name="Player" parent="." instance=ExtResource("1_6tf54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="PauseScreen" parent="." instance=ExtResource("2_gfmx6")]
